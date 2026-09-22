@@ -14,7 +14,6 @@ from langchain_chroma import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import FAISS
 
 
 from pypdf import PdfReader
@@ -93,7 +92,6 @@ def add_document_to_rag(file_path: str, thread_id: str):
         lot_actuel = docs[i : i + taille_lot]
         
   
-        # Note: FAISS.add_documents attend généralement une liste de documents
         vectorstore.add_documents(lot_actuel)
             
         print(f"Progression : {min(i + taille_lot, len(docs))} / {len(docs)} chunks traités.")
