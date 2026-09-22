@@ -150,7 +150,7 @@ def save_memory(thread_id: str, memory: str):
         item = LongTermMemory(
             thread_id=thread_id,
             memory=memory,
-            created_at=datetime.now(timezone.utc)()
+            created_at=datetime.now(timezone.utc)
         )
 
         db.add(item)
